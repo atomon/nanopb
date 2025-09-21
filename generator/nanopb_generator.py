@@ -76,6 +76,8 @@ else:
 
 if nanopb_pb2 is None:
     sys.stderr.write("False")
+else:
+    sys.stderr.write(f"{nanopb_pb2.IS_8}")
 
 sys.stderr.write(f"{dir(nanopb_pb2)}")
 # ---------------------------------------------------------------------------

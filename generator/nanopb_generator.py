@@ -72,10 +72,11 @@ if getattr(sys, "frozen", False):
 else:
     # Import nanopb_pb2.py, rebuilds if necessary and not disabled
     # by env variable NANOPB_PB2_NO_REBUILD
-    sys.stderr.write("False")
     nanopb_pb2 = proto.load_nanopb_pb2()
 
-sleep(3)
+if nanopb_pb2 is None:
+    sys.stderr.write("False")
+
 sys.stderr.write(f"{dir(nanopb_pb2)}")
 # ---------------------------------------------------------------------------
 #                     Generation of single fields

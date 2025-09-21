@@ -68,7 +68,6 @@ else:
 
 if getattr(sys, "frozen", False):
     # Binary package, just import the file
-    sys.stderr.write("True")
     from proto import nanopb_pb2
 else:
     # Import nanopb_pb2.py, rebuilds if necessary and not disabled
@@ -76,6 +75,7 @@ else:
     sys.stderr.write("False")
     nanopb_pb2 = proto.load_nanopb_pb2()
 
+sleep(3)
 sys.stderr.write(f"{dir(nanopb_pb2)}")
 # ---------------------------------------------------------------------------
 #                     Generation of single fields

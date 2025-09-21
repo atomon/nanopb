@@ -73,10 +73,8 @@ else:
     # Import nanopb_pb2.py, rebuilds if necessary and not disabled
     # by env variable NANOPB_PB2_NO_REBUILD
     nanopb_pb2 = proto.load_nanopb_pb2()
-    import time
 
-    time.sleep(5)
-
+    sys.stderr.write(f"{proto.load_nanopb_pb2()}")
     if nanopb_pb2.IS_8 is None:
         sys.stderr.write("False")
     else:

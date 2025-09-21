@@ -74,7 +74,7 @@ else:
     # by env variable NANOPB_PB2_NO_REBUILD
     nanopb_pb2 = proto.load_nanopb_pb2()
 
-sys.stderr.write(f"{nanopb_pb2}")
+sys.stderr.write(f"{dir(nanopb_pb2)}")
 # ---------------------------------------------------------------------------
 #                     Generation of single fields
 # ---------------------------------------------------------------------------

@@ -68,10 +68,12 @@ else:
 
 if getattr(sys, "frozen", False):
     # Binary package, just import the file
+    sys.stderr.write("True")
     from proto import nanopb_pb2
 else:
     # Import nanopb_pb2.py, rebuilds if necessary and not disabled
     # by env variable NANOPB_PB2_NO_REBUILD
+    sys.stderr.write("False")
     nanopb_pb2 = proto.load_nanopb_pb2()
 
 sys.stderr.write(f"{dir(nanopb_pb2)}")
